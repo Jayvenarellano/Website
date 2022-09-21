@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!--LINK-->
+    <link rel="stylesheet" href="./assets/css/index.css">
+
+    <!--SCRIPT-->
+    <script src="https://kit.fontawesome.com/924fff2849.js" crossorigin="anonymous"></script>
+
+
+    
+    <title>Jayven Arellano</title>
+</head>
+<body onload="initClock()">
+
+    <div class="Container">
+        <nav>
+            <!--NAV_ITEMS-->
+            <ul class="navItems">
+                <li><a class="home">Home</a></li>
+                <li><a href="./pages/About.html">About</a></li>
+                <li><a href="./pages/Contact.html">Contact</a></li>
+            </ul>
+        </nav>
+
+        <!--IMAGE_CONTAINER-->
+        <div class="Image_Container">
+            <div class="imagebox">
+                <img src="assets/images/avatar3.png" alt="user pic">
+            </div>
+            <span class="animate_circle"></span>
+        </div>
+
+        <!--ICONS-->
+        <div class="icons">
+            <a href="https://www.facebook.com/ArellanoJayven">
+                <i class="fa fa-facebook">
+                    <span>Facebook</span>
+                </i>
+            </a>
+            <br>
+            <a href="https://www.instagram.com/jayven_02/">
+                <i class="fa fa-instagram">
+                    <span>Instagram</span>
+                </i>
+            </a>
+            <br>
+            <a href="https://github.com/Jayvenarellano">
+                <i class="fa fa-github">
+                    <span>Github</span>
+                </i>
+            </a>
+        </div>
+
+        <!--WRAPPER-->        
+        <div class="wrapper">
+            <div class="cols cols0">
+                <span class="topline">Welcome</span>
+                <h1>Hi I'm <span class="multiText"></span></h1>
+                <p>" EVERY PERSON TAKES THE LIMITS OF THEIR OWN FIELD OF VISION FOR THE LIMITS OF THE WORLD "</p>
+            </div>
+        </div>  
+
+        <div class="DateTime">
+            <div class="Date">
+                <span id="dayname">Day</span>,
+                <span id="month">Month</span>
+                <span id="daynum">00</span>,
+                <span id="year">Year</span>
+            </div>
+            <div class="Time">
+                <span id="hour">00</span>:
+                <span id="minutes">00</span>:
+                <span id="seconds">00</span>
+                <span id="period">AM</span>
+            </div>
+        </div>
+
+    </div>
+
+    <!--MULTITEXT_SCRIPT-->
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+    <script>var typingEffect = new Typed(".multiText",{
+        strings : ["Jayven", "Arellano"], 
+        loop : true,
+        typeSpeed : 100,
+        backSpeed : 100,
+        backDelay :  1500
+    })
+    </script>
+
+    <script type="text/javascript">
+        function updateClock(){
+            var now = new Date();
+            var dname = now.getDay(),
+                mon = now.getMonth(),
+                dnum = now.getDate(),
+                yr = now.getFullYear(),
+                hr = now.getHours(),
+                min = now.getMinutes(),
+                sec = now.getSeconds(),
+                per = "AM";
+
+                if(hr == 0){
+                    hr = 12;
+                }
+                if(hr > 12){
+                    hr = hr - 12;
+                    per = "PM";
+                }
+
+                Number.prototype.pad =  function(digits){
+                    for(var n =  this.toString(); n.length < digits; n = 0 + n);
+                    return n;
+                }
+
+                var months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+                var week = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+                var ids = ["dayname", "month", "daynum", "year", "hour", "minutes", "seconds", "period"];
+                var values = [week[dname], months[mon], dnum.pad(2), yr, hr.pad(2), min.pad(2), sec.pad(2), per];
+                for(var i = 0; i < ids.length; i++)
+                document.getElementById(ids[i]).firstChild.nodeValue = values[i];
+        }
+        function initClock(){
+            updateClock();
+            window.setInterval("updateClock()", 1);
+        }
+    </script>
+    
+</body>
+</html>
