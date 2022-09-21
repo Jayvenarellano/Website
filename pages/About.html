@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="../css/About.css">
+
+    <script src="https://kit.fontawesome.com/924fff2849.js" crossorigin="anonymous"></script>
+
+    <title>Jayven Arellano</title>
+</head>
+<body>
+
+    <div class="Container">
+
+        <!--WAVE_ANIMATION--> 
+
+    <div class="line line-1">
+        <div class="wave wave1" style="background-image: url(../images/1.png)"></div>
+    </div>
+
+    <div class="line line-2">
+        <div class="wave wave2" style="background-image: url(../images/2.png)"></div>
+    </div>
+
+    <div class="line line-3">
+        <div class="wave wave3" style="background-image: url(../images/3.png)"></div>
+    </div>
+
+    </div>
+
+        <nav>
+            <!--NAV_ITEMS-->
+            <ul class="navItems">
+                <li><a href="../index.html">Home</a></li>
+                <li><a class="happy">About</a></li>
+                <li><a href="./Contact.html">Contact</a></li>
+            </ul>
+        </nav> 
+
+<!--IMAGE_CONTAINER-->
+<div class="Image_Container">
+    <div class="chuunib">
+        <img src="../images/avatar1.png" alt="user pic">
+    </div>
+</div>  
+
+
+    <!--ABOUT-->
+    <div id=""about>
+        <div class="container">
+            <div class="row">
+                <div class="about-col-1">
+                    <div class="imagebox">
+                        <img src="../images/user.png">
+                    </div>
+                </div>
+                <div class="about-col-2">
+                    <div class="wrapper">
+                        <div class="cols cols0">
+                            <h1>About <span class="multiText"></span></h1>
+                            <p>Hello guys, I'm Jayven Arellano, 20 years old. I live in San Isidro, Batangas City. I'm currently attending college at batangas state university.I'm taking the course Bachelor of Science in Information Technology and am currently in my 3rd year of college.</p>
+                        </div>
+                    </div>
+
+                    <div class="tab-titles">
+                        <p class="tab-links active-link" onclick="opentab('address')">Address</p>
+                        <p class="tab-links" onclick="opentab('education')">Education</p>
+                        <p class="tab-links" onclick="opentab('more')">More</p>
+                    </div>
+                    <div class="tab-contents active-tab" id="address">
+                        <ul>
+                            <li><i  style="margin-right:10px" class="fa-solid fa-location-dot"></i>San Isidro, Batangas City</li>
+                            <li><i style="margin-right:10px" class="fa-solid fa-address-book"></i>San Isidro Village Phase II, Block 22 Lot 24</li>
+
+                        </ul>
+                    </div>
+                    <div class="tab-contents" id="education">
+                        <ul>
+                            <li><i style="margin-right:10px" class="fa-brands fa-java"></i>JAVA</li>
+                            <li><i style="margin-right:10px" class="fa-brands fa-html5"></i>HTML</li>
+                            <li><i style="margin-right:10px" class="fa-brands fa-css3-alt"></i>CSS</li>
+                            <li><i style="margin-right:10px" class="fa-brands fa-python"></i>PYTHON</li>
+                            <li><i style="margin-right:10px" class="fa-brands fa-square-js"></i>JAVASCRIPT</li>
+                        </ul>
+                    </div>
+                    <div class="tab-contents" id="more">
+                        <ul>
+                            <li><i style="margin-right:10px" class="fa-sharp fa-solid fa-tv"></i>Watching Kdrama/Anime</li>
+                            <li><i style="margin-right:10px" class="fa-brands fa-readme"></i>Reading Light Novels</li>
+                            <li><i style="margin-right:10px" class="fa-solid fa-bicycle"></i>Cycling</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+
+        var tablinks = document.getElementsByClassName("tab-links");
+        var tabcontents = document.getElementsByClassName("tab-contents");
+
+        function opentab(tabname){
+            for(tablink of tablinks){
+                tablink.classList.remove("active-link");
+            }
+            for(tabcontent of tabcontents){
+                tabcontent.classList.remove("active-tab");
+            }
+            event.currentTarget.classList.add("active-link");
+            document.getElementById(tabname).classList.add("active-tab");
+        }
+
+    </script>
+
+
+    <!--MULTITEXT_SCRIPT-->
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+    <script>var typingEffect = new Typed(".multiText",{
+        strings : ["Myself"], 
+        loop : true,
+        typeSpeed : 100,
+        backSpeed : 100,
+        backDelay :  1500
+    })
+    </script>
+
+
+
+
+</body>
+</html>
